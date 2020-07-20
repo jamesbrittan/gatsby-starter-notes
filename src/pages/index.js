@@ -7,6 +7,8 @@ import {
   AccordionItemTitle,
   AccordionItemBody,
 } from 'react-accessible-accordion'
+import { withPlugin } from 'tinacms'
+import { RemarkCreatorPlugin } from 'gatsby-tinacms-remark'
 
 import Layout from '../components/layout'
 import './index.css'
@@ -43,7 +45,24 @@ const IndexPage = props => {
   )
 }
 
-export default IndexPage
+const CreatePostPlugin = new RemarkCreatorPlugin({
+  label: 'Create Post',
+  fields: [
+    {
+      name: 'filename',
+      component: 'text',
+      label: 'Filename',
+      placeholder: 'content/blog/hello-world/index.md',
+      description:
+        'The full path to the new markdown file, relative to the repository root.',
+    },
+  ],
+  filename: form => {
+    return form.filename
+  },
+})
+
+export default withPlugin(IndexPage, CreatePostPlugin)
 
 export const query = graphql`
   query ListQuery {

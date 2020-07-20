@@ -1,5 +1,5 @@
 ---
-title: "Schroedinger's Cat"
+title: Schroedinger's Cat
 description: This post may or may not exist
 date: '2018-09-26'
 ---
