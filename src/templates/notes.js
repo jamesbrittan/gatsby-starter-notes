@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import { graphql } from 'gatsby';
+import { remarkForm } from 'gatsby-tinacms-remark'
 
 const notes = (props) => {
   const notesMarkdown = props.data.markdownRemark;
@@ -14,7 +15,7 @@ const notes = (props) => {
   );
 }
 
-export default notes;
+export default remarkForm(notes);
 
 export const query = graphql`
   query NotesQuery($slug: String!) {
@@ -24,6 +25,7 @@ export const query = graphql`
         title
         description
       }
+      ...TinaRemark
     }
   }
 `;

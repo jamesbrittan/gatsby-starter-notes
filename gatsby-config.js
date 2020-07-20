@@ -29,15 +29,25 @@ module.exports = {
               maxWidth: 650,
             },
           },
-        ]
-      }
+        ],
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
-    }
+        name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-tinacms',
+      options: {
+        enabled: process.env.NODE_ENV !== 'production',
+        sidebar: {
+          position: 'displace',
+        },
+        plugins: ['gatsby-tinacms-git', 'gatsby-tinacms-remark'],
+      },
+    },
   ],
 }
