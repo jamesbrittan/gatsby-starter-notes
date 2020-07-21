@@ -7,3 +7,4 @@ date: '2020-07-21T17:45:56.386Z'
 * Each category sorted by date/title view
 * Password protection for viewing/editing
 * Deleting notes/categories
+* Better fon
