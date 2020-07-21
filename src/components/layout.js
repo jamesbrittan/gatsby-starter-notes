@@ -36,7 +36,7 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          <p>pick this up from step 3: https://tinacms.org/docs/gatsby/creating-new-files</p>
+          <p>pick this up from end of step 3 - Deleting Files: https://tinacms.org/docs/gatsby/creating-new-files</p>
           {children}
 
         </div>
